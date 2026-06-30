@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM dw.fato_vendas;

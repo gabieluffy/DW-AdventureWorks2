@@ -1,0 +1,1 @@
+SELECT 'OK' as status;

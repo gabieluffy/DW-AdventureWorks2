@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM dw.dim_tempo;

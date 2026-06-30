@@ -1,0 +1,9 @@
+PROJECT_NAME = "DW AdventureWorks"
+
+PROJECT_VERSION = "1.0"
+
+AIRFLOW_SCHEDULE = "@daily"
+
+LOG_LEVEL = "INFO"
+
+BATCH_SIZE = 1000

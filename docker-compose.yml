@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+
+  postgres:
+
+    image: postgres:16
+
+    container_name: dw_postgres
+
+    environment:
+
+      POSTGRES_DB: dw_adventureworks
+
+      POSTGRES_USER: postgres
+
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+
+      - "5432:5432"
+
+  airflow:
+
+    build: .
+
+    container_name: airflow_dw
+
+    depends_on:
+
+      - postgres
+
+    ports:
+
+      - "8080:8080"
+
+    volumes:
+
+      - ./dags:/opt/airflow/dags
+
+      - ./etl:/opt/airflow/etl
+
+      - ./config:/opt/airflow/config

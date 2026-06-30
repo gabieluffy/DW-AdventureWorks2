@@ -1,15 +1,7 @@
-apache-airflow
-
+apache-airflow==2.10.2
 pandas
-
 numpy
-
 sqlalchemy
-
-pyodbc
-
 psycopg2-binary
-
+pyodbc
 python-dotenv
-
-openpyxl

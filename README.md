@@ -1,41 +1,62 @@
-# DW-AdventureWorks2
+# 📊 Data Warehouse AdventureWorks
 
-## Sobre o Projeto
+## 📌 Sobre o Projeto
 
-Este projeto implementa um processo completo de Data Warehouse utilizando o banco AdventureWorks como fonte de dados (OLTP em SQL Server) e PostgreSQL como banco analítico (DW).
+Este projeto implementa um **Data Warehouse completo** baseado no banco operacional **AdventureWorks (SQL Server)**, utilizando um modelo dimensional em **Star Schema** e pipeline ETL automatizado em Python com orquestração via Apache Airflow.
 
-O processo ETL foi desenvolvido em Python e automatizado utilizando Apache Airflow.
+O objetivo é transformar dados transacionais em informações analíticas para suporte à tomada de decisão.
 
-## Objetivos
+---
 
-- Implementar um Data Warehouse utilizando Star Schema.
-- Desenvolver um processo ETL.
-- Automatizar as cargas utilizando Apache Airflow.
-- Disponibilizar indicadores (KPIs) para apoio à tomada de decisão.
+## 🏗️ Arquitetura
 
-## Tecnologias
+- Fonte: SQL Server (AdventureWorks 2022)
+- ETL: Python (pandas, pyodbc, psycopg2)
+- DW: PostgreSQL
+- Orquestração: Apache Airflow
+- Infraestrutura: Docker
 
-- SQL Server (AdventureWorks)
-- PostgreSQL
-- Python 3
-- Apache Airflow
-- Docker
-- Pandas
-- SQLAlchemy
-- psycopg2
-- pyodbc
+---
 
-## Estrutura
+## ⚙️ Pipeline
 
-- config → configurações
-- dags → pipeline Airflow
-- etl → código ETL
-- SQL → scripts SQL
-- documentos → documentação
-- imagens → diagramas
-- logs → logs do sistema
+1. Extração dos dados (SQL Server)
+2. Transformação (Python + Pandas)
+3. Validação dos dados
+4. Carga das dimensões
+5. Lookup de Surrogate Keys
+6. Carga da tabela fato
+7. Disponibilização de KPIs
 
-## Autor
+---
 
-Gabrielly de Souza Gervasio
-Curso de Sistemas de Informação
+## 📐 Modelo Dimensional
+
+- DimCliente
+- DimProduto
+- DimTempo
+- DimVendedor
+- DimTerritorio
+- FatoVendas
+
+---
+
+## 📊 KPIs Implementados
+
+- Receita total
+- Lucro total
+- Ticket médio
+- Vendas por cliente
+- Vendas por produto
+- Vendas por território
+- Quantidade vendida
+- Margem de lucro
+- Top clientes
+- Evolução mensal de vendas
+
+---
+
+## 🧪 Execução
+
+```bash
+docker-compose up

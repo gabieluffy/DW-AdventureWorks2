@@ -1,0 +1,15 @@
+apache-airflow
+
+pandas
+
+numpy
+
+sqlalchemy
+
+pyodbc
+
+psycopg2-binary
+
+python-dotenv
+
+openpyxl
